@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/stylesperson.css" type="text/css">
+    <script src="https://kit.fontawesome.com/e329f9f909.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- left button and category -->
+    <div  class="leftbutton">
+        <a href="../mainpage.html">
+            <i class="fa-solid fa-angle-left"></i>
+        </a>
+    </div>
+    <div class="category" >
+        <div >
+            <p>თანამშრომლის ინფო</p>
+            <div class="div-underline" ></div>
+        </div>
+        <a class="laptop-header" href="../html/laptop.html" style=" text-decoration: none;" >
+            <p >ლეპტოპის მახასიათებლები</p>
+        </a>
+    </div>
+<main class="myForm">
+    <form  method="post" onsubmit = "event.preventDefault(), validate()" class="needs-validation form" novalidate>
+    <!--  creating person name input field -->
+    <div class="person--fullname">
+        <div class="fname" style="float:left;">
+            <label for="fname">სახელი</label>
+            <input class="fname--input saveValue checkValidity" id="name" type="text" name="fname" placeholder="გრიშა"  >
+            <p class="fname--p">მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
+        </div>
+        <div class="lname" style="float:left;margin-left: 50px;">
+            <label for="lname">გვარი</label>
+            <input class="lname--input saveValue checkValidity " id="surname" type="text" name="lname" placeholder="ბაგრატიონი" >
+            <p class="lname--p">მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
+        </div>
+    </div>
+    <!-- end of person name input field -->
+
+    <!--creating person info select option-->
+    <select name="team"  class="select--team" id="team_id" required >
+        <option value="false" selected  hidden >თიმი</option>
+    </select>
+    <label class="selcheck" style="visibility: hidden;" for="team" > * არჩევა სავალდებულოა </label>
+    <select name="position" id="position_id"  class="select--position " required  >
+        <option value="false" selected hidden >პოზიცია</option>
+    </select>
+    <label class="selcheck" style="visibility: hidden;" for="position"> * არჩევა სავალდებულოა</label>
+    <!-- end of person info select option-->
+
+    <!-- creating email input -->
+    <div class="email" style="margin-top:40px;">
+        <label for="email">მეილი</label>
+        <input  type="email" class="email--input saveValue" name="email" id="email"   placeholder="grish666@redberry.ge"  >
+        <p class="email--text">უნდა მთავრდებოდეს @redberry.ge-ით</p>
+    </div>
+    <!-- end of email input -->
+
+    <!-- creating mobile number input -->
+    <div class="phone--number" style="margin-top: 40px;">
+        <label for="number">ტელეფონის ნომერი</label>
+        <input value="+995" class="mobile--number saveValue" type="text" name="number" id="phone_number"  >
+        <p class="mobile--text">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</p>
+    </div>
+    <!-- end of mobile number input-->
+    <input type="submit" class="submit" value="შემდეგი" >
+    </form>
+</main>
+<!--LOGO-->
+    <div class="logo">
+        <img src="../resources/LOGO-10 2.png"  alt="">
+    </div>
+    <script src="../js/person.js"></script>
+</body>
+</html>

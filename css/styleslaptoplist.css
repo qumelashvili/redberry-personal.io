@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url("../resources/HelveticaNeue.ttc")
+}
+*{
+    font-family: 'HelveticaNeue';
+}
+body{
+    margin: 0;
+}
+
+.leftbutton{
+    width: 50px;
+    height: 50px;
+    background-color: #D9D9D9;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    margin-left: 70px;
+}
+.leftbutton a{
+    text-decoration: none!important;
+    width: 100%;
+    text-align: center;
+}
+a{
+    text-decoration: none!important;
+}
+header{
+    display: flex;    
+}
+.text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    padding-right: 100px;
+}
+.list-card{
+    width: 563px;
+    height: 205px;
+    background-color: rgba(234, 250, 255, 1);
+    border-radius: 20px;
+    border: 1px solid #AED1EA    ;
+    display: flex;
+    padding: 14px;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+.list-card img{
+    width: 266px;
+    height: 178px;
+    border-radius: 10px;
+}
+.card-info{
+    padding-left: 28px;
+    padding-top: 20px;
+}
+.card-info h1{
+    font-size: 18px;
+    font-weight: 700;
+}
+.card-info p{
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 25px;
+}
+.card-info a{
+    font-size: 16px;
+    color: rgba(67, 134, 169, 1);
+    text-decoration: underline!important; 
+}
+.list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 50px 350px 50px 350px;
+}
+
+@media only screen and (max-width: 391px) {
+    .list-card{
+        width: 358px;
+        height: 123px;
+        align-items: center;
+        margin-top: 26px;
+    }
+    .list-card img{
+        width: 164px;
+        height: 109px;
+    }
+    .list{
+        padding: 7px;
+        margin-top: -20px;
+    }
+    .card-info h1{
+        font-size: 14px;
+    }
+    .card-info p{
+        font-size: 18px;
+        padding-bottom: 0px;
+        margin-top: -3px;
+    }
+    .card-info{
+        padding-top: 0px;
+    }
+    .text h1{
+        font-size: 16px!important;
+        margin-left: 50px;
+    }
+    .leftbutton{
+        margin-left: 10px;
+        background-color: transparent;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styleslaptop.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e329f9f909.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <!-- left button div -->
+    <div  class="leftbutton">
+        <a href="../html/person.html" >
+            <i class="fa-solid fa-angle-left"></i>
+        </a>
+    </div>
+    <!-- categories -->
+    <div class="category" >
+        <a class="person-category" href="../html/person.html">
+            <p>თანამშრომლის ინფო</p>
+        </a>
+        <div>
+            <p >ლეპტოპის მახასიათებლები</p>
+            <div class="div-underline"></div>
+        </div>
+    </div>
+<main>
+    <form class="myForm">
+        <!-- photo upload area -->
+        <div class="photo">
+            <div id="drop-region">
+                <div class="drop-message" >
+                    <img src="../resources/Vector.png" alt="">
+                    <h1>ჩააგდე ან ატვირთე ლეპტოპის ფოტო</h1>
+                    <button>ატვირთე</button>
+                </div>
+            </div>
+            <div class="photo-name">
+                <div class="txt">
+                    <img src="../resources/green.png" alt="">
+                    <h1 class="photo-text"></h1><span class="photo-size"></span>
+                </div>
+                <div>
+                    <input id="photo" type="file" id="real" hidden>
+                    <button class="photo-button">თავიდან ატვირთე</button>
+                </div>
+            </div>
+        </div>
+        <!-- area of laptop brand and laptop name-->
+        <div class="laptop-information">
+            <div class="laptop-brand">
+                <div class="laptop-name label">
+                    <label  for="validaniotCustom0" class="form-label" >ლეპტოპის სახელი</label>
+                    <input type="text" name="laptop_name" class="fullsize "    id="validationCustom0" placeholder="HP"  pattern="[A-Za-z0-9!@#$%^&*()_+=]+"  >
+                    <p class="text">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </p>
+                </div>
+                <select name="laptopBrand" id="laptop_brand_id" class="laptop-brand_select " >
+                    <option value="false" selected hidden>ლეპტოპის ბრენდი</option>
+                </select>
+            </div>
+
+            <!-- creating custom line -->
+            <div class="line"></div>
+
+            <!-- area of cpu details -->
+            <div class="laptop-cpu">
+                <div class="laptop-cpu_name label">
+                    <select name="laptop_cpu" id="laptop_cpu" class="laptop-cpu_select">
+                        <option value="false" selected hidden>CPU</option>
+                    </select>
+                </div>
+                <div class="laptop-cpu_core label">
+                    <label  for="laptop_cpu_cores">CPU-ს ბირთვი</label>
+                    <input type="text" name="laptop_cpu_cores" id="laptop_cpu_cores" class="checkValidity cpu" placeholder="14" >
+                    <p class="text">მხოლოდ ციფრები</p>
+                </div>
+                <div class="laptop-cpu_stream label">
+                    <label   for="laptop_cpu_threads">CPU-ს ნაკადი</label>
+                    <input type="text" name="laptop_cpu_threads" class="checkValidity stream" id="laptop_cpu_threads" placeholder="365" >
+                    <p class="text">მხოლოდ ციფრები</p>
+                </div>
+            </div>
+
+            <!-- area of storage details -->
+            <div class="laptop-storage ">
+                <div class="laptop-ram label">
+                    <label  for="laptop-ram">ლეპტოპის RAM (GB)</label>
+                    <input type="text" name="laptop_ram" id="laptop-ram" class="fullsize checkValidity" placeholder="16" >
+                    <p class="text">მხოლოდ ციფრები</p>
+                </div>
+                <div class="laptop-storage_type">
+                    <label class="radio-label2" for="" >მეხსიერების ტიპი  <img style="width:20px; margin-left: 10px;margin-top: -2px;opacity: 0;" src="../resources/Vector.png" alt=""></label>
+                    <div class="storage-radio">
+                        <input type="radio" id="ssd" name="laptop_hard_drive_type" value="SSD" class="checkValidityRadio2" >
+                        <label style="margin-left: 20px!important;" for="ssd">SSD</label><br>
+                        <input type="radio" id="hdd" name="laptop_hard_drive_type" class="checkValidityRadio2 rdo2" value="HDD" >
+                        <label for="hdd" style="margin-left: 20px!important;">HDD</label><br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- creating custom line -->
+            <div class="line" style="background-color: #C7C7C7"></div>
+
+            <!-- area of buying details-->
+            <div class="laptop-details ">
+                <div class="laptop-buy_date label">
+                    <label  for="laptop_purchase_date">შეძენის რიცხვი</label>
+                    <input type="date" min="1997-01-01" max="2030-12-31" name="laptop_purchase_date" id="laptop_purchase_date" class="fullsize checkValidity" >
+                </div>
+                <div class="laptop-buy_price label">
+                    <label for="laptop_price">ლეპტოპის ფასი</label>
+                    <input type="text" name="laptop_price" id="laptop_price" class="fullsize checkValidity" placeholder="0000" >
+                    <p class="text">მხოლოდ ციფრები</p>
+                </div>
+            </div>
+
+            <!-- laptop condition details-->
+            <div style="margin-top: 50px" >
+                <label  for="" class="radio-label1">
+                    ლეპტოპის მდგომარეობა 
+                    <img style="width:20px; margin-left: 10px;margin-top: -2px;opacity: 0;" src="../resources/Vector.png" alt="">
+                </label>
+                <div class="condition-radio">
+                    <input type="radio" id="new" name="laptop_state" value="new" class="checkValidityRadio" >
+                    <label style="margin-left: 20px!important;" for="new">ახალი</label><br>
+                    <input type="radio" style="margin-left: 60px" id="used" name="laptop_state" class="checkValidityRadio" value="used" >
+                    <label for="used" style="margin-left: 20px!important;">მეორადი</label><br>
+                </div>
+            </div>
+                <!-- area for submit button -->
+                <div class="submit-div">
+                    <a href="../html/person.html">
+                        <p>
+                            უკან
+                        </p>
+                    </a>
+                    <input type="submit" name="" value="დამახსოვრება" id="" class="submit"  > 
+                </div>
+    </form>
+</main>
+<!-- bottom logo -->
+<div class="logo">
+    <img src="../resources/LOGO-10 2.png"  alt="">
+</div>
+<script src="../js/laptop.js"></script>
+</body>
+</html>
